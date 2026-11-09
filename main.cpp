@@ -5,7 +5,7 @@
 
 const int    STUDENT_COUNT   = 7;      // Масив із 7 елементів
 const double HONOR_THRESHOLD = 90.0;   // Поріг для студента-відмінника
-const int    TARGET_COURSE   = 2;      // Цільовий курс для другої підзадачі
+const int    TARGET_COURSE   = 2;      // Цільовий курс для другого підзавдання
 
 
 // Пункт 3: Опис перелічувального типу (enum)
@@ -74,7 +74,7 @@ void executeSubtask1()
         arrStudents[i].bPlaysMusic = arrMusic[i];
     }
 
-    // Виведення бази даних у вигляді таблиці
+    // Виведення бази даних
     std::cout << "----------------------------------------------------------\n";
     std::cout << "| "  << std::left       << std::setw(4)  << "No"
               << "| "                     << std::setw(14) << "Name (enum)"
@@ -85,10 +85,10 @@ void executeSubtask1()
 
     for (int i = 0; i < STUDENT_COUNT; i++)
     {
-        std::cout << "| "  << std::left                                          << std::setw(4)  << (i + 1)
-                  << "| "                                                        << std::setw(14) << STUDENT_NAMES_STR[arrStudents[i].name]
+        std::cout << "| "  << std::left                << std::setw(4)  << (i + 1)
+                  << "| "                              << std::setw(14) << STUDENT_NAMES_STR[arrStudents[i].name]
                   << "| "  << std::right << std::fixed << std::setprecision(1) << std::setw(15) << arrStudents[i].dGpa
-                  << " | " << std::left                                          << std::setw(15) << (arrStudents[i].bPlaysMusic ? "Yes (true)" : "No (false)")
+                  << " | " << std::left                << std::setw(15) << (arrStudents[i].bPlaysMusic ? "Yes (true)" : "No (false)")
                   << "|\n";
     }
     std::cout << "----------------------------------------------------------\n\n";
@@ -112,7 +112,8 @@ void executeSubtask1()
     std::cout << "Statistical Summary (Threshold GPA >= " << HONOR_THRESHOLD << "):\n"; //Пороговий середній бал
     std::cout << "  - Total students in database:       " << STUDENT_COUNT << "\n";     //Всього студентів у базі
     std::cout << "  - Honor students count:             " << nHonorCount << "\n";       //Кількість учнів-відмінників
-    std::cout << "  - Honor students playing music:     " << nHonorMusicCount << "\n";  //Кількість учнів-відмінників, що займаються музикою
+    std::cout << "  - Honor students playing music:     " << nHonorMusicCount << "\n";  //Кількість учнів-відмінників,
+                                                                                        //що займаються музикою
 
     if (nHonorCount > 0)
     {
@@ -153,7 +154,7 @@ void executeSubtask2()
     // Пункт 2: Масив структур із 7 елементів
     StudentGrant arrStudents[STUDENT_COUNT];
 
-    // Пункт 5 методички: Ініціювання масиву структур
+    // Пункт 5: Ініціювання масиву структур
     for (int i = 0; i < STUDENT_COUNT; i++)
     {
         arrStudents[i].name            = arrNames[i];
